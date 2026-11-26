@@ -61,7 +61,7 @@ It provides synchronized body part damage, limb amputation/transplantation, cybe
 | Mod | Compatibility Description |
 |---|---|
 | **DGH** | Core medical system, body part vitality, wound & bleeding mechanics. |
-| **Create Cybernetics / Cyberware** | Surgery bed integration, limb/organ replacement, humanity & integrity stats. |
+| **Create Cybernetics** | Surgery bed integration, limb/organ replacement, humanity & integrity stats. |
 | **Player Corpses** | Native corpse storage, DGH health snapshot persistence, relic inspection (`F`). |
 | **Carry On** | Hand-carrying downed players and wrapped corpse bags. |
 | **Ragdollified & Zarith** | Physics ragdoll sync for downed players and localized limb hitboxes. |
