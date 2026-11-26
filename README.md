@@ -60,7 +60,7 @@ It provides synchronized body part damage, limb amputation/transplantation, cybe
 
 | Mod | Compatibility Description |
 |---|---|
-| **DGH (Doctor, General Hospital)** | Core medical system, body part vitality, wound & bleeding mechanics. |
+| **DGH** | Core medical system, body part vitality, wound & bleeding mechanics. |
 | **Create Cybernetics / Cyberware** | Surgery bed integration, limb/organ replacement, humanity & integrity stats. |
 | **Player Corpses** | Native corpse storage, DGH health snapshot persistence, relic inspection (`F`). |
 | **Carry On** | Hand-carrying downed players and wrapped corpse bags. |
@@ -154,12 +154,12 @@ This project is released under the open-source license specified in the source c
 
 | 模组名称 | 兼容与联动说明 |
 |---|---|
-| **DGH (医生，综合医院)** | 提供核心生理健康、器官/肢体损伤、出血自愈等基础医疗逻辑。 |
-| **Create Cybernetics (义体)** | 提供义体手术台/床联动、器官/义肢替换、人性值与数据完整性显示。 |
-| **Player Corpses (玩家尸体)** | 原生尸体容器对接、DGH 健康快照持久化、`F` 键遗物查看。 |
-| **Carry On (双手搬运)** | 支持双手抱起倒地玩家及已封袋的尸体。 |
+| **DGH** | 提供核心生理健康、器官/肢体损伤、出血自愈等基础医疗逻辑。 |
+| **Create Cybernetics** | 提供义体手术台/床联动、器官/义肢替换、人性值与数据完整性显示。 |
+| **Player Corpses** | 原生尸体容器对接、DGH 健康快照持久化、`F` 键遗物查看。 |
+| **Carry On** | 支持双手抱起倒地玩家及已封袋的尸体。 |
 | **Ragdollified & Zarith** | 倒地实体物理布娃娃同步、物理旋转肢体精准受击箱。 |
-| **Point Blank (枪械)** | 贯穿伤弹着点判定、手臂失能影响持枪与换弹。 |
+| **Point Blank** | 贯穿伤弹着点判定、手臂失能影响持枪与换弹。 |
 | **Cinematic Interaction** | 诊疗及手术过程中的电影化沉浸视角。 |
 | **Cloth Config** | 提供可视化配置菜单，支持实时搜索与数值合法性校验。 |
 
