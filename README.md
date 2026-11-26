@@ -3,7 +3,7 @@
 [![Minecraft 1.21.1](https://img.shields.io/badge/Minecraft-1.21.1-brightgreen.svg)](https://minecraft.net/)
 [![NeoForge 21.1.230](https://img.shields.io/badge/NeoForge-21.1.230-orange.svg)](https://neoforged.net/)
 [![Java 21](https://img.shields.io/badge/Java-21-blue.svg)](https://www.oracle.com/java/)
-[![License](https://img.shields.io/badge/License-MIT%20%2F%20Custom-lightgrey.svg)](#license--许可证)
+[![License](https://img.shields.io/badge/License-LGPL--3.0-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
 [English](#english) | [中文说明](#中文说明)
 
@@ -60,14 +60,14 @@ It provides synchronized body part damage, limb amputation/transplantation, cybe
 
 | Mod | Compatibility Description |
 |---|---|
-| **DGH** | Core medical system, body part vitality, wound & bleeding mechanics. |
-| **Create Cybernetics** | Surgery bed integration, limb/organ replacement, humanity & integrity stats. |
-| **Player Corpses** | Native corpse storage, DGH health snapshot persistence, relic inspection (`F`). |
-| **Carry On** | Hand-carrying downed players and wrapped corpse bags. |
-| **Ragdollified & Zarith** | Physics ragdoll sync for downed players and localized limb hitboxes. |
-| **Point Blank** | Penetrating gunshot wounds & arm damage affecting firearm usage. |
-| **Cinematic Interaction** | Immersive camera & interaction angles during medical operations. |
-| **Cloth Config** | In-game configuration GUI with search and input validation. |
+| **[DGH (Don't Get Hurt / 无伤大雅)](https://www.curseforge.com/minecraft/mc-mods/dont-get-hurt)** | Core medical system, body part vitality, wound & bleeding mechanics. |
+| **[Create Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics)** | Surgery bed integration, limb/organ replacement, humanity & integrity stats. |
+| **[Player Corpses](https://www.curseforge.com/minecraft/mc-mods/player-corpses)** | Native corpse storage, DGH health snapshot persistence, relic inspection (`F`). |
+| **[Carry On](https://www.curseforge.com/minecraft/mc-mods/carry-on)** | Hand-carrying downed players and wrapped corpse bags. |
+| **[Ragdollified](https://www.curseforge.com/minecraft/mc-mods/ragdollified) & Zarith** | Physics ragdoll sync for downed players and localized limb hitboxes. |
+| **[Point Blank (Vic's Point Blank)](https://www.curseforge.com/minecraft/mc-mods/vics-point-blank)** | Penetrating gunshot wounds & arm damage affecting firearm usage. |
+| **[Cinematic Interactions](https://www.curseforge.com/minecraft/mc-mods/cinematic-interactions)** | Immersive camera & interaction angles during medical operations. |
+| **[Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)** | In-game configuration GUI with search and input validation. |
 
 ---
 
@@ -99,7 +99,11 @@ Output artifacts will be generated in `build/libs/` and `build/distributions/`.
 ---
 
 ### License
-This project is released under the open-source license specified in the source code repository.
+This project is released under the **GNU Lesser General Public License v3.0 (LGPL-3.0)**, the same license as the original DGH mod.
+
+DGH Compatibility Bridge is a derivative work that links against DGH; therefore the compatibility bridge follows LGPL-3.0 to remain license-compatible with the upstream project.
+
+See the [LICENSE](LICENSE) file for the full text, or read it online at <https://www.gnu.org/licenses/lgpl-3.0.html>.
 
 ---
 
@@ -154,14 +158,25 @@ This project is released under the open-source license specified in the source c
 
 | 模组名称 | 兼容与联动说明 |
 |---|---|
-| **DGH** | 提供核心生理健康、器官/肢体损伤、出血自愈等基础医疗逻辑。 |
-| **Create Cybernetics** | 提供义体手术台/床联动、器官/义肢替换、人性值与数据完整性显示。 |
-| **Player Corpses** | 原生尸体容器对接、DGH 健康快照持久化、`F` 键遗物查看。 |
-| **Carry On** | 支持双手抱起倒地玩家及已封袋的尸体。 |
-| **Ragdollified & Zarith** | 倒地实体物理布娃娃同步、物理旋转肢体精准受击箱。 |
-| **Point Blank** | 贯穿伤弹着点判定、手臂失能影响持枪与换弹。 |
-| **Cinematic Interaction** | 诊疗及手术过程中的电影化沉浸视角。 |
-| **Cloth Config** | 提供可视化配置菜单，支持实时搜索与数值合法性校验。 |
+| **[DGH（无伤大雅 / Don't Get Hurt）](https://www.curseforge.com/minecraft/mc-mods/dont-get-hurt)** | 提供核心生理健康、器官/肢体损伤、出血自愈等基础医疗逻辑。 |
+| **[Create Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics)** | 提供义体手术台/床联动、器官/义肢替换、人性值与数据完整性显示。 |
+| **[Player Corpses](https://www.curseforge.com/minecraft/mc-mods/player-corpses)** | 原生尸体容器对接、DGH 健康快照持久化、`F` 键遗物查看。 |
+| **[Carry On](https://www.curseforge.com/minecraft/mc-mods/carry-on)** | 支持双手抱起倒地玩家及已封袋的尸体。 |
+| **[Ragdollified](https://www.curseforge.com/minecraft/mc-mods/ragdollified) & Zarith** | 倒地实体物理布娃娃同步、物理旋转肢体精准受击箱。 |
+| **[Point Blank（Vic's Point Blank）](https://www.curseforge.com/minecraft/mc-mods/vics-point-blank)** | 贯穿伤弹着点判定、手臂失能影响持枪与换弹。 |
+| **[Cinematic Interactions](https://www.curseforge.com/minecraft/mc-mods/cinematic-interactions)** | 诊疗及手术过程中的电影化沉浸视角。 |
+| **[Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)** | 提供可视化配置菜单，支持实时搜索与数值合法性校验。 |
+
+### 模组链接汇总
+
+| 模组 | CurseForge 链接 |
+|---|---|
+| DGH（无伤大雅） | https://www.curseforge.com/minecraft/mc-mods/dont-get-hurt |
+| Carry On | https://www.curseforge.com/minecraft/mc-mods/carry-on |
+| Create Cybernetics | https://www.curseforge.com/minecraft/mc-mods/cybernetics |
+| Cinematic Interactions | https://www.curseforge.com/minecraft/mc-mods/cinematic-interactions |
+| Vic's Point Blank | https://www.curseforge.com/minecraft/mc-mods/vics-point-blank |
+| Ragdollified | https://www.curseforge.com/minecraft/mc-mods/ragdollified |
 
 ---
 
@@ -193,4 +208,8 @@ build-local.cmd
 ---
 
 ### 许可证
-本开源项目遵循源代码仓库中所附带的许可证协议。
+本项目沿用原模组 **DGH（无伤大雅）** 的开源协议，采用 **GNU Lesser General Public License v3.0（LGPL-3.0）** 发布。
+
+兼容桥是需要链接 DGH 的衍生作品，因此同样遵循 LGPL-3.0，以保持与上游项目的许可证兼容性。
+
+完整协议文本见仓库中的 [LICENSE](LICENSE) 文件，或在线阅读：<https://www.gnu.org/licenses/lgpl-3.0.html>。
