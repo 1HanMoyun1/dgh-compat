@@ -1,0 +1,13 @@
+2.4.27 变更
+
+1. 修复用户错误报告中的 ClientLevel -> ServerLevel ClassCastException。
+   触发点为客户端 surgical_corpse 的 CorpseLifecycleMixin，注入位于上游逻辑端判断之前。
+   增加客户端提前取消分支，避免调用 HealthCapability.SYNIfDirty。
+2. RagdollAdapter 不再认领已有布娃娃，也不在后续封袋/治疗时误删其他扩展的物理体。
+3. Player Corpses 已安装时保留原死亡物理体供其接手，不复制其物品容器。
+4. 新增可选 Reactions 钩子：固定医疗姿势不接受新反应物理会话。
+5. 新增可选 Revive/Drag 钩子：DGH 管理者由 DGH 结算，不启用第二套独立倒地血量。非 DGH 玩家保留原版扩展逻辑。
+6. 明确三个扩展的可选依赖版本，与收齐的 JAR 元数据一致。
+
+未完成：服务端物理命中/碰撞同步、DGH 右键复活与拖拽统一、物品尸体与手术尸体合并、已有 Reactions 会话在封袋时强制结束。
+验证：只编译打包，不启动 Minecraft 或专用服务器，不做冒烟测试；不能据此宣称全系列已实机兼容。

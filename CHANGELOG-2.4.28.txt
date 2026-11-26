@@ -1,0 +1,48 @@
+DGH Integrations 2.4.28 — 尸体、遗物和强起
+
+工作目录：D:\Desktop\HanMoyun\project\dgh-bridge-rebuild
+仅修改兼容桥。构建：Java 21、Minecraft 1.21.1、NeoForge 21.1.230。
+运行 build-local.cmd 执行 clean assemble sourceBundle，不启动游戏、服务器或冒烟测试。
+
+操作
+- 默认 F（Minecraft 控制设置内“DGH 兼容桥”可改键）。
+- 对准尸体/尸袋按 F：查看遗物；正抱着尸袋时也可以按 F。
+- 对准倒地玩家，空手或持 AED 长按 F：补充生命值，不治疗伤势，不清除昏迷、不强制站起。
+- 松键、换目标、换工具、离开距离或视线中断会取消计时。
+- 活体必须拆袋才能治疗；尸体可以保持封袋在手术床上进行原生手术。
+
+配置文件：config/dgh_cybernetics_compat-common.toml（首次运行后生成）
+[rescue]
+handHealthFraction = 0.25
+handHoldTicks = 100
+aedHealthFraction = 1.0
+aedHoldTicks = 100
+时长单位为游戏 tick，正常 20 tick/秒。
+强起使用 DGH 原生额外生命值，其自然衰减遵循 DGH 设置，不增加免倒地窗口。
+AED 默认支持 DGH AED，及 Revive/Drag 的已充电 packengine:rpr_aed；额外物品可通过 dgh_cybernetics_compat:rescue_aeds 物品标签扩展。
+使用 DGH AED 消耗耐久；扩展 AED 使用后取消充电，耐久型物品同样消耗一次耐久。
+
+尸体与遗物
+- 装有 Player Corpses 0.2.3-BETA 时，玩家使用其原生尸体和原生遗物容器，桥附加死亡时的 DGH 数据，不另生成可见尸体。
+- Player Corpses 不提供动物/村民尸体，这些生物及未安装该扩展的玩家使用桥的独立无 AI 尸体；已去掉 Zombie 继承。
+- DGH 要求 LivingEntity 参数，原生尸体使用一个不加入世界、不独立保存的内存数据视图适配。真正的世界实体、位置、UUID、物品容器仍是原生尸体，交互无需找隐藏僵尸。
+- DGH 健康快照随 Player Corpses 的 PendingCorpse 保存、加载、复制、实体化，避免玩家重生改变尸体病情。
+- 后备尸体接收正常死亡掉落和经验；超过 54 格的物品继续留作地面掉落，keepInventory 不会复制物品。
+- Carry On 搬运保存实际尸体及其容器；携带期间查看遗物会回写同一份携带数据，放下前关闭并提交菜单。
+- 未合并旧版世界中已经存在的两具尸体，避免误删不同死亡记录或遗物。
+
+物理处理
+- 倒地布娃娃生成后明确隐藏原生物渲染。
+- 后备尸体接管时清理原实体遗留物理体；Player Corpses 玩家不再另起第二具桥尸体。
+- 封袋/承载时关闭原生尸体的自由推挤与交接物理，避免袋模型与自由身体同时显示。
+- 仍未把全部物理肢体位置回传为服务端碰撞；F 可识别物理射线目标，但服务端保留距离/视线校验。
+
+依赖
+本工程 libs 需要 DGH、Cloth、Carry On、Cinematic 及编译用 Ragdollified 1.2.2 / Player Corpses 0.2.3-BETA JAR。
+运行时布娃娃系列仍为可选，不内嵌第三方文件。源码包不打包依赖，另处解压时复制活动工程 libs。
+保留原 mod ID、旧 surgical_corpse 注册 ID，避免旧尸体因改名直接丢失。
+
+验证边界
+这次只做编译打包和源码/目标接口核对，未运行游戏、服务器或冒烟测试。
+原生尸体、Carry On、物品菜单、物理退场及联机交互均需用户实测。
+旧版完整义体器官生理功能的接口缺口不在此版补齐。

@@ -1,0 +1,91 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+version = '2.4.55'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+neoForge { version = '21.1.230' }
+dependencies {
+    compileOnly files('libs/ragdollified-neoforge-1.21.1-1.2.2.jar')
+    compileOnly files(providers.gradleProperty('pointBlankJar').getOrElse('../文件/pointblank-neoforge-1.21-2.2.0.jar'))
+    compileOnly files('libs/carryon-neoforge-1.21.1-2.2.6.13.jar')
+    compileOnly files(providers.gradleProperty('dghJar').getOrElse('libs/dgh-1.3.3.15-NeoForge-1.21.1.jar'),
+                      'libs/cloth-config-15.0.140-neoforge.jar',
+                      'libs/Cinematic Interaction-NeoForge-1.21.1-0.18.30.jar')
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+java.withSourcesJar()
+
+tasks.withType(AbstractArchiveTask).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+
+// Standalone regression checks use the real compile dependencies, without launching a world.
+sourceSets {
+    verification {
+        java.srcDir 'review/tests'
+        compileClasspath += sourceSets.main.output + configurations.compileClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
+dependencies {
+    verificationImplementation 'org.ow2.asm:asm:9.8'
+}
+
+tasks.register('verifyBridge', JavaExec) {
+    group = 'verification'
+    description = 'Checks bridge rules, state delivery, silence preservation and bytecode targets.'
+    dependsOn tasks.named('verificationClasses')
+    classpath = sourceSets.verification.runtimeClasspath
+    mainClass = 'com.hanmoyun.dghcompat.review.BridgeChecks'
+    workingDir = layout.projectDirectory.asFile
+}
+
+tasks.named('check') { dependsOn tasks.named('verifyBridge') }
+
+tasks.register('verifyLocalDependencies') {
+    group = 'verification'
+    doLast {
+        def required = [
+            providers.gradleProperty('pointBlankJar').getOrElse('../文件/pointblank-neoforge-1.21-2.2.0.jar'),
+            'libs/ragdollified-neoforge-1.21.1-1.2.2.jar',
+            providers.gradleProperty('dghJar').getOrElse('libs/dgh-1.3.3.15-NeoForge-1.21.1.jar'),
+            'libs/carryon-neoforge-1.21.1-2.2.6.13.jar',
+            'libs/cloth-config-15.0.140-neoforge.jar',
+            'libs/Cinematic Interaction-NeoForge-1.21.1-0.18.30.jar'
+        ]
+        def missing = required.findAll { !file(it).isFile() }
+        if (!missing.isEmpty()) throw new GradleException('Missing local dependencies: ' + missing.join(', '))
+    }
+}
+
+tasks.named('compileJava') { dependsOn tasks.named('verifyLocalDependencies') }
+
+tasks.register('sourceBundle', Zip) {
+    group = 'distribution'
+    description = 'Packages editable bridge sources, wrapper, checks and build instructions.'
+    archiveFileName = "dgh-compat-${project.version}-source.zip"
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    from(layout.projectDirectory) {
+        include 'src/**', 'gradle/**', 'gradlew', 'gradlew.bat'
+        include 'build.gradle', 'settings.gradle', 'build-local.cmd'
+        include '.editorconfig', '.gitignore', 'README.txt', 'CHANGELOG-*.txt'
+        include 'review/tests/**', 'libs/DEPENDENCIES.sha256'
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

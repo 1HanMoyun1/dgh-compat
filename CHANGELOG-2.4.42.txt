@@ -1,0 +1,4 @@
+DGH 兼容桥 2.4.42
+
+布娃娃兼容限 Zarith、Ragdollified、Reactions 和 Player Corpses。失血与骨折影响重击倒地判定。死亡掉落进入尸体遗物，已装袋伤员保留停滞袋，倒地死亡交接肢体姿势。
+Point Blank 允许在主手健全时把原本限主手的枪移至可用副手，副手持这类枪仍禁止换弹。

@@ -1,0 +1,2 @@
+DGH 兼容桥 2.4.45
+取消搜尸界面和 Ragdollified Player Corpses 联动。Better Looting 使用原拾取栏，未安装时装备与战利品正常落地。副手第一人称持枪位置按镜头空间镜像。致死伤害向布娃娃传递冲量。

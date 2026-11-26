@@ -1,0 +1,110 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.hanmoyun.dghcompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AvailableHandMixin",
+    "PointBlankGunMixin",
+    "PointBlankGripAccess",
+    "PointBlankHitMixin",
+    "PointBlankWoundMixin",
+    "RagdollMotionMixin",
+    "RagdollKnockbackMixin",
+    "RagdollInjuryMixin",
+    "RagdollPlayerMovementMixin",
+    "GroundHealthMenuMixin",
+    "SealedCorpseSlotMixin",
+    "CorpseDisplayAccess",
+    "RagdollReactionsMixin",
+    "MedicalDeathPhysicsMixin",
+    "PlayerCorpseConflictMixin",
+    "DeathPacketAccess",
+    "CorpseDeathMixin",
+    "DeathRecordRespawnMixin",
+    "NeoSyncChamberAccess",
+    "CorpseLifecycleMixin",
+    "CorpseCapabilityMixin",
+    "CorpseItemMixin",
+    "CorpseOrganMenuMixin",
+    "StasisSoundMixin",
+    "CaseItemDisplayAccess",
+    "CaseDisplayAccess",
+    "CaseInteractionAccess",
+    "CaseBookHealingMixin",
+    "StasisBoundsMixin",
+    "BodyMixin",
+    "HealthMixin",
+    "NeuralCapacityMixin",
+    "NeuralRemovalMixin",
+    "OrganBaseAccess",
+    "SuspendedLoadoutMixin",
+    "CyberTableAnatomyMixin",
+    "CyberSlotAnatomyMixin",
+    "CyberCommitAnatomyMixin",
+    "CyberbrainEngramMixin",
+    "ExtremitiesMixin",
+    "SurgeryLimbDropMixin",
+    "TraumaticLimbDropMixin",
+    "ImplantWorkbenchMixin",
+    "ConditionMixin",
+    "StretcherControllerAccessor",
+    "CreativeTabOrderMixin",
+    "StretcherGeometryMixin",
+    "CarryPickupMixin",
+    "StasisHealingMixin",
+    "StasisSurgeryMixin"
+  ],
+  "client": [
+    "CombatBodyRenderMixin",
+    "ConfigSearchMixin",
+    "CyberArmVisibilityMixin",
+    "CyberHighlightArmsMixin",
+    "HeldArmItemMixin",
+    "PointBlankReloadMixin",
+    "ArmorArmMixin",
+    "PointBlankArmModelMixin",
+    "PointBlankClientMixin",
+    "NativeRagdollSpawnMixin",
+    "NativeCorpseSkinMixin",
+    "StasisCarryPoseMixin",
+    "StasisCarryFirstPersonMixin",
+    "CorpseMonitorMixin",
+    "BedReachMixin",
+    "TreatmentCameraMixin",
+    "TreatmentHandsMixin",
+    "TreatmentPlayerRendererMixin",
+    "TreatmentPlayerModelMixin",
+    "TreatmentBodyVisibilityMixin",
+    "DockedStretcherRendererMixin",
+    "TransportPatientRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
